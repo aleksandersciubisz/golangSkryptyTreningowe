@@ -1,0 +1,1 @@
+Minimal writing in Go!
