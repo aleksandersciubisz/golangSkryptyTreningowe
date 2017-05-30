@@ -3,11 +3,30 @@ package main
 import "fmt"
 
 type Dog struct {
-	Breed string
+	Breed  string
 	Weight int
-	Sound string
+	Sound  string
+}
+
+func (d Dog) Speak() {
+	fmt.Println(d.Sound)
+}
+
+func (d Dog) SpeakThreeTimes() {
+	d.Sound = fmt.Sprintf("%v! %v! %v!\n",
+		d.Sound, d.Sound, d.Sound)
+	fmt.Print(d.Sound)
+
 }
 
 func main() {
+	poodle := Dog{"poodle", 43, "woof!"}
+	fmt.Println(poodle)
+	poodle.Speak()
+
+	poodle.Sound = "Arf!"
+	poodle.Speak()
+
+	poodle.SpeakThreeTimes()
 
 }
